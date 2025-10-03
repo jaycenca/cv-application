@@ -1,4 +1,5 @@
 import Textbox from "./shared/Textbox";
+import '../styles/Education.css';
 export default function Education({schoolName, titleOfStudy, dateOfStudy, isSubmit=false, onChange}) {
     
     if (!isSubmit) {
@@ -38,9 +39,20 @@ export default function Education({schoolName, titleOfStudy, dateOfStudy, isSubm
     return (
         <>
             <div>
-                <h1>Education</h1>
-                <p>{schoolName} | {titleOfStudy} | {dateOfStudy}</p>
-            </div>
+                <h2 style={{
+                    textAlign: 'left',
+                    textDecoration: 'underline',
+                    marginBottom: '10px' }}
+                > EDUCATION
+                </h2>
+                <div style={{
+                    textAlign: 'left',
+                }}>
+                    <p>{titleOfStudy}</p>
+                    <p>{schoolName}</p>
+                    <p>{dateOfStudy}</p>
+                </div>
+                </div>
         </>
     );
 }

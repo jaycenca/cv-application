@@ -23,7 +23,7 @@ function App() {
   const [workExperienceSection, setWorkExperienceSection] = useState({
     companyName: 'Rogers Telecomunnication Inc.',
     positionTitle: 'Software Developer',
-    jobDescription: 'Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to design and implement new features, improving user experience and performance.',
+    jobDescription: 'Developed and maintained web applications using React and Node.js. \n Collaborated with cross-functional teams to design and implement new features, improving user experience and performance. ',
     dateFrom: 'June 2022',
     dateTo: 'June 2025',
   });
@@ -64,7 +64,7 @@ function App() {
 
   return (
     <>
-      <div style={{ flex: 1, padding: '10px', width: '100%' }}>
+      <div style={{ width: '100%', padding: '1cm', display: 'flex', flexDirection: 'column', height: "100%" }}>
         <Information
           name={informationSection.name}
           email={informationSection.email}
@@ -73,9 +73,7 @@ function App() {
           isSubmit={isSubmitted}
           onChange={handleInformationChange}
         />
-      </div>
 
-      <div style={{ flex: 1, padding: '10px', width: '100%' }}>
         <WorkExperience
           companyName={workExperienceSection.companyName}
           positionTitle={workExperienceSection.positionTitle}
@@ -85,9 +83,7 @@ function App() {
           isSubmit={isSubmitted}
           onChange={handleWorkExperienceChange}
         />
-      </div>
 
-      <div style={{ flex: 1, padding: '10px', width: '100%' }}>
         <Education
           schoolName={educationSection.schoolName}
           titleOfStudy= {educationSection.titleOfStudy}
@@ -95,7 +91,43 @@ function App() {
           isSubmit={isSubmitted}
           onChange={handleEducationChange}
         />
-      </div>
+
+        <button
+          onClick={handlePrevious}
+          style={{
+            disable: isPrevious ? 'true' : 'false',
+            position: 'fixed',
+            bottom: '20px',
+            left: '20px',
+            padding: '10px 20px',
+            backgroundColor: isPrevious ? '#6c757d': '#007BFF',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}
+        >
+          Previous
+        </button>
+
+        <button
+          onClick={handleSubmit}
+          disabled= {isSubmitted ? true : false}
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            padding: '10px 20px',
+            backgroundColor: isSubmitted? '#6c757d': '#007BFF',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}
+        >
+          Submit
+        </button>
+      </div>  
 
       {/* <div style={{ flex: 1, padding: '10px', width: '100%' }}>
         <span style={{ fontWeight: 'bold' }}>Skills Section:</span>
@@ -104,40 +136,6 @@ function App() {
       <div style={{ flex: 1, padding: '10px', width: '100%' }}>
         <span style={{ fontWeight: 'bold' }}>Projects Section:</span>
       </div> */}
-
-      <button
-        onClick={handlePrevious}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          left: '20px',
-          padding: '10px 20px',
-          backgroundColor: '#6c757d',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-        }}
-      >
-        Previous
-      </button>
-
-      <button
-        onClick={handleSubmit}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          padding: '10px 20px',
-          backgroundColor: '#007BFF',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-        }}
-      >
-        Submit
-      </button>
     </>
   );
 }
