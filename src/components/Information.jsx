@@ -46,7 +46,7 @@ export default function Information({name, email, phoneNo, address, isSubmit=fal
 
     return (
         <>
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', padding: 2 }}>
+            <div>
                 <h1>{name}</h1>
                 <p>{email} | {phoneNo} | {address}</p>
             </div>
